@@ -12,7 +12,7 @@ import {
 import { IMissionInventoryUpdateRequest } from "../types/requestTypes";
 import { logger } from "@/src/utils/logger";
 
-// need reverse engineer rewardSeed, otherwise ingame displayed rotation reward will be different than added to db or displayed on mission end
+// need to reverse engineer rewardSeed, otherwise ingame displayed rotation reward will be different than added to db or displayed on mission end
 const getRewards = ({
     RewardInfo
 }: IMissionInventoryUpdateRequest): {
