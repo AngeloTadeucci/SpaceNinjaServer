@@ -169,7 +169,7 @@ export interface IInventoryResponse {
     PendingRecipes: IPendingRecipeResponse[];
     TrainingDate: IMongoDate;
     PlayerLevel: number;
-    Upgrades: ICrewShipSalvagedWeaponSkin[];
+    Upgrades: IDefaultUpgrade[];
     EquippedGear: string[];
     DeathMarks: string[];
     FusionTreasures: IFusionTreasure[];
@@ -290,6 +290,7 @@ export interface IInventoryResponse {
     PendingCoupon: IPendingCoupon;
     Harvestable: boolean;
     DeathSquadable: boolean;
+    ActiveQuest: string;
 }
 
 export interface IAffiliation {
@@ -825,6 +826,13 @@ export interface IQuestProgress {
     i: boolean;
     m: boolean;
     b?: any[];
+}
+
+export interface IDefaultUpgrade {
+    ItemType: string;
+    UpgradeFingerprint?: string;
+    ItemId?: IOid;
+    _id?: Types.ObjectId;
 }
 
 export interface IRawUpgrade {

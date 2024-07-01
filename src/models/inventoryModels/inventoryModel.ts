@@ -2,7 +2,6 @@ import { Model, Schema, Types, model } from "mongoose";
 import {
     IFlavourItem,
     IRawUpgrade,
-    ICrewShipSalvagedWeaponSkin,
     IMiscItem,
     IInventoryDatabase,
     IBooster,
@@ -36,9 +35,10 @@ import {
     IPeriodicMissionCompletionDatabase,
     IPeriodicMissionCompletionResponse,
     ILoreFragmentScan,
-    IEvolutionProgress
-} from "../../types/inventoryTypes/inventoryTypes";
-import { IOid } from "../../types/commonTypes";
+    IEvolutionProgress,
+    IDefaultUpgrade
+} from "@/src/types/inventoryTypes/inventoryTypes";
+import { IOid } from "@/src/types/commonTypes";
 import {
     IAbilityOverride,
     IColor,
@@ -932,7 +932,9 @@ const inventorySchema = new Schema<IInventoryDatabase, InventoryDocumentProps>(
         //Zanuka
         Harvestable: Boolean,
         //Grustag three
-        DeathSquadable: Boolean
+        DeathSquadable: Boolean,
+        //ActiveQuest
+        ActiveQuest: String
     },
     { timestamps: { createdAt: "Created" } }
 );
@@ -965,7 +967,7 @@ type InventoryDocumentProps = {
     OperatorAmps: Types.DocumentArray<IEquipmentDatabase>;
     FlavourItems: Types.DocumentArray<IFlavourItem>;
     RawUpgrades: Types.DocumentArray<IRawUpgrade>;
-    Upgrades: Types.DocumentArray<ICrewShipSalvagedWeaponSkin>;
+    Upgrades: Types.DocumentArray<IDefaultUpgrade>;
     MiscItems: Types.DocumentArray<IMiscItem>;
     Boosters: Types.DocumentArray<IBooster>;
     OperatorLoadOuts: Types.DocumentArray<IOperatorConfigClient>;

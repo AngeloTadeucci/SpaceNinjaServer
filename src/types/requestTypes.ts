@@ -11,8 +11,9 @@ import {
     IMission,
     IRawUpgrade,
     ISeasonChallenge,
-    TSolarMapRegion,
-    TEquipmentKey
+    TEquipmentKey,
+    IQuestKeyDatabase,
+    TSolarMapRegion
 } from "./inventoryTypes/inventoryTypes";
 
 export interface IArtifactsRequest {
@@ -67,6 +68,7 @@ export interface IMissionInventoryUpdateRequest {
     RewardInfo?: IMissionInventoryUpdateRequestRewardInfo;
     Missions?: IMission;
     EvolutionProgress?: IEvolutionProgress[];
+    QuestKeys?: IQuestKeyDatabase[];
     LastRegionPlayed?: TSolarMapRegion;
 
     FusionPoints?: number; // Not a part of the request, but we put it in this struct as an intermediate storage.
