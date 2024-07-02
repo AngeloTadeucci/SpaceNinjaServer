@@ -39,6 +39,7 @@ interface IConfig {
     unlockAllSkins?: boolean;
     universalPolarityEverywhere?: boolean;
     spoofMasteryRank?: number;
+    useStaticWorldState?: boolean;
 }
 
 interface ILoggerConfig {
